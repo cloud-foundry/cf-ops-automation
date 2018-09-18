@@ -82,7 +82,7 @@ describe 'ConcoursePipelineTemplateProcessing (ie: concourse-pipeline.yml.erb)' 
         type: docker-image
         source:
           repository: concourse/concourse-pipeline-resource
-          tag: 3
+          tag: 1.0.0
     YAML
     YAML.safe_load(resource_types_yaml)
   end

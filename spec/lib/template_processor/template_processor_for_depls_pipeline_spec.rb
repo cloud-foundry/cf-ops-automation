@@ -88,7 +88,7 @@ describe 'DeplsPipelineTemplateProcessing' do
         type: docker-image
         source:
           repository: concourse/concourse-pipeline-resource
-          tag: 3
+          tag: 1.0.0
       - name: bosh-deployment-v2
         type: docker-image
         source:
