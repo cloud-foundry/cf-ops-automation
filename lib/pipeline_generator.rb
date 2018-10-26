@@ -73,7 +73,7 @@ class PipelineGenerator
 
     ctxt.depls                 = options.depls
     ctxt.bosh_cert             = BoshCertificates.new(options.secrets_path, BOSH_CERT_LOCATIONS).load_from_location.certs
-    ctxt.secrets_dirs_overview = Secrets.new("#{options.secrets_path}/*").overview
+    ctxt.secrets_dirs_overview = Secrets.new("#{options.secrets_path}/*", options.depls).overview
     ctxt.version_reference     = root_deployment_versions.versions
     ctxt.all_dependencies      = RootDeployment.new(options.depls, options.paas_templates_path, options.secrets_path).overview_from_hash(deployment_factory)
     ctxt.all_ci_deployments    = CiDeployment.new(File.join(options.secrets_path, ctxt.depls)).overview
