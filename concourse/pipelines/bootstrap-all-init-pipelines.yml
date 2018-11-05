@@ -55,6 +55,7 @@ jobs:
       trigger: true
     - get: cf-ops-automation
       params: { submodules: none}
+      trigger: true
     - get: paas-templates-full
       params: { submodules: none}
     - get: secrets-full
@@ -70,6 +71,8 @@ jobs:
       username: Concourse
   plan:
   - aggregate:
+    - get: weekday-morning
+      trigger: true
     - get: cf-ops-automation
       params: { submodules: none}
       trigger: true
