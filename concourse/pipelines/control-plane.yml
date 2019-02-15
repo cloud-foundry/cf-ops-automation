@@ -217,6 +217,7 @@ jobs:
   - task: generate-concourse-pipeline-config
     file: cf-ops-automation/concourse/tasks/generate_concourse_pipeline_config/task.yml
   - put: fe-int-micro
+    attempts: 2
     params:
       pipelines_file: concourse-pipeline-config/pipelines-definitions.yml
 
