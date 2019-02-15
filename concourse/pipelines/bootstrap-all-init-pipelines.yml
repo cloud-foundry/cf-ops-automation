@@ -72,16 +72,13 @@ jobs:
   - aggregate:
     - get: cf-ops-automation
       params: { submodules: none}
-      trigger: true
       passed: [ create-teams ]
     - get: paas-templates-full
       params: { submodules: none}
       passed: [ create-teams ]
-      trigger: true
     - get: secrets-full
       params: { submodules: none}
       passed: [ create-teams ]
-      trigger: true
   - task: generate-all-init-pipelines
     input_mapping: {scripts-resource: cf-ops-automation,templates-resource: paas-templates-full,secrets-resource: secrets-full}
     output_mapping: {result-dir: all-pipelines}
